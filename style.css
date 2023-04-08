@@ -1,0 +1,78 @@
+:root {
+  --font-size-normal: 40px;
+  --font-size-push: 37px;
+  --font-color: #777;
+  --button-shadow-outset: 10px 10px 20px rgba(204, 204, 204, 0.9),-10px -10px 20px rgba(255, 255, 255, 0.7);
+  --button-shadow-inset: inset 10px 10px 20px rgba(204, 204, 204, 0.7),inset -10px -10px 20px rgba(255, 255, 255, 1);
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  margin: 0;
+  grid-template-rows: .9fr .1fr;
+  font-family: 'Roboto';
+  background: #EEE;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+}
+
+.button {
+  width: 100px;
+  height: 100px;
+  border: none;
+  border-radius: 20px;
+  font-family: inherit;
+  font-size: var(--font-size-normal);
+  color: var(--font-color);
+  box-shadow: var(--button-shadow-outset);
+  cursor: pointer;
+  outline: none;
+}
+
+.button + .button,
+.button + .button-outer {
+  margin-left: 30px;
+}
+
+.button.plate {
+  background:  #f0f0f0;
+}
+
+.button.balloon {
+  background:  linear-gradient(145deg, #ffffff, #d8d8d8);
+}
+.button-outer {
+  padding: 30px;
+  border-radius: 50%;
+  box-shadow: inset 18px 18px 30px rgba(204, 204, 204, 1), inset -18px -18px 30px rgba(255, 255, 255, 1);
+}
+
+.button.round {
+  border-radius: 50%;
+}
+
+.button:focus {
+  font-size: var(--font-size-push);
+}
+
+.button.light-push:focus {
+  background: linear-gradient(145deg, #d8d8d8, #ffffff);
+}
+
+.button.heavy-push:focus {
+  background: #f0f0f0;
+  box-shadow: var(--button-shadow-inset);
+}
+
+.thanks-to {
+  color: var(--font-color);
+  padding-right: 30px;
+  font-size: 1.5em;
+  text-align: right;
+}
